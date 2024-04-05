@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="My Suite">
+    <test name="Edge Parallel Test">
+
+        <parameter name="browserType" value="edge"/>
+        <classes>
+            <class name="Runners.ParallelTest"/>
+        </classes>
+    </test>
+    <test name="Firefox Parallel Test">
+
+        <parameter name="browserType" value="firefox"/>
+        <classes>
+            <class name="Runners.ParallelTest"/>
+        </classes>
+    </test>
+
+
+</suite>
