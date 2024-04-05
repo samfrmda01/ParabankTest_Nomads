@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
+import java.util.List;
 
 public class ParentPage {
     public WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(7));
@@ -47,9 +48,13 @@ public class ParentPage {
         }
     }
 
-    public void verifyContainzText(WebElement element, String value) {
-        wait.until(ExpectedConditions.textToBePresentInElement(element, value));
-        Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()));
+    public static boolean ListContainsString(List<WebElement> list, String string) {
+        boolean condition = false;
+        for (WebElement e : list) {
+            if (e.getText().equalsIgnoreCase(string))
+                condition = true;
+        }
+        return condition;
     }
 
     public static int RandomGenerator(int max, int min) {
