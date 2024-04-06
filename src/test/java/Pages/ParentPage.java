@@ -61,5 +61,4 @@ public class ParentPage {
         return (int) (Math.random() * (max - min));
     }
 
-
 }

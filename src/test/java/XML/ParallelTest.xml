@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="My Suite">
+<suite name="my suit" parallel="tests" thread-count="2">
     <test name="Edge Parallel Test">
 
         <parameter name="browserType" value="edge"/>
@@ -14,6 +14,5 @@
             <class name="Runners.ParallelTest"/>
         </classes>
     </test>
-
 
 </suite>
