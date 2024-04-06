@@ -4,7 +4,7 @@ package Pages;
 import java.awt.*;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
-import java.security.Key;
+
 
 import static Pages.ParentPage.WaitNano;
 
@@ -26,8 +26,6 @@ public class sRobot {
             tabPresser(time);
         } else if (action.equals("tabReverse")) {
             tabPresserReverse(time);
-        } else if (action.equals("copy")) {
-            copyFunction(time);
         } else {
             System.out.println("Invalid Action");
         }
@@ -68,15 +66,4 @@ public class sRobot {
             robot.keyRelease(KeyEvent.VK_ENTER);
         }
     }
-
-    private static void copyFunction(int time) {
-        for (int i = 0; i < time; i++) {
-            WaitNano(1);
-            robot.keyPress(KeyEvent.VK_CONTROL);
-            robot.keyPress(KeyEvent.VK_C);
-            robot.keyRelease(KeyEvent.VK_C);
-            robot.keyRelease(KeyEvent.VK_CONTROL);
-        }
-    }
 }
-

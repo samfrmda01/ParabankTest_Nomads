@@ -4,8 +4,8 @@ Feature: Take Loan
   Scenario Outline: Application of Loan
     Given Navigate to the website
     When User logs in with valid credentials
-      | username | samo |
-      | password | samo |
+      | username | aw |
+      | password | aw |
     Then Click on login button
       | loginButton |
     And Click on request loan button
@@ -22,6 +22,6 @@ Feature: Take Loan
       | loan  | downPaymentt |
       | 0     | 0            |
       | 10000 | 5            |
-#      | 0     | 50           |
-#      | 50    | 100          |
-#      | 1000  | 500          |
+      | 0     | 50           |
+      | 10    | 50           |
+      | 1000  | 500          |

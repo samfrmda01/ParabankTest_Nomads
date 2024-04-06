@@ -30,6 +30,12 @@ public class credit_pom extends ParentPage {
     WebElement selectAcc;
     @FindBy(css = "input[type='submit']")
     WebElement applyLoan;
+    @FindBy(css = "div[ng-if^='show']")
+    WebElement helperText;
+    @FindBy(css = "div[id='leftPanel'] li:nth-child(2)")
+    WebElement accountOverview;
+    @FindBy(css = "tbody tr[ng-repeat]")
+    List<WebElement> accounts;
 
     public WebElement getWebElement(String element) {
         switch (element) {

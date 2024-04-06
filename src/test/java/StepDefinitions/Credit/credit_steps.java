@@ -11,15 +11,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import static Pages.ParentPage.WaitNano;
+
 public class credit_steps {
+    static int num = 0;
     credit_pom cP = new credit_pom();
 
     @Given("Navigate to the website")
     public void navigateToTheWebsite() {
         GWD.getDriver().get("https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC");
-        System.out.println("on the website");
     }
 
     @When("User logs in with valid credentials")
@@ -29,7 +34,6 @@ public class credit_steps {
             WebElement a = cP.getWebElement(buttons.get(i).get(0));
             cP.mySendKeys(a, buttons.get(i).get(1));
         }
-        System.out.println("entered credentials successfully");
     }
 
     @Then("Click on login button")
@@ -41,7 +45,6 @@ public class credit_steps {
         }
         cP.scrollToElement(GWD.getDriver().findElement(By.cssSelector("h1[class='title']")));
         Assert.assertEquals(GWD.getDriver().getCurrentUrl(), "https://parabank.parasoft.com/parabank/overview.htm", "buggy");
-        System.out.println("on the site");
     }
 
     @And("Click on request loan button")
@@ -85,5 +88,32 @@ public class credit_steps {
 
     @Then("Check helper texts")
     public void checkHelperTexts() {
+        num++;
+        WaitNano(10);
+        List<String> helperTexts = new ArrayList<>(Arrays.asList("Error!", "Status: Denied", "Status: Approved"));
+        if (num == 1) {
+            cP.verifyContainsText(cP.helperText, helperTexts.get(0));
+        } else if (num == 2) {
+            cP.verifyContainsText(cP.helperText, helperTexts.get(1));
+        } else if (num == 3) {
+            cP.verifyContainsText(cP.helperText, helperTexts.get(0));
+        } else if (num == 4) {
+            cP.verifyContainsText(cP.helperText, helperTexts.get(1));
+        } else if (num == 5) {
+            cP.verifyContainsText(cP.helperText, helperTexts.get(2));
+            String account = cP.helperText.getText().substring(cP.helperText.getText().length() - 5);
+            cP.myClick(cP.accountOverview);
+            WaitNano(4);
+            for (WebElement x : cP.accounts) {
+                if (x.getText().contains(account)) {
+                    String[] amount = x.getText().split(" ");
+                    String dollaSign = amount[1].replaceAll("[^\\d.]", "");
+                    double amountD = Double.parseDouble(dollaSign);
+                    Assert.assertEquals(amountD, 1000.0, "buggyz");
+                }
+            }
+        }
+
+
     }
 }
