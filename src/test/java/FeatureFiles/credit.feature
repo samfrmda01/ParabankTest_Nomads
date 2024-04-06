@@ -1,6 +1,6 @@
 Feature: Take Loan
 
-
+  @Loan @Accounts @Regression
   Scenario Outline: Application of Loan
     Given Navigate to the website
     When User logs in with valid credentials
