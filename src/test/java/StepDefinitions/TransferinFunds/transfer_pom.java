@@ -32,5 +32,19 @@ public class transfer_pom extends ParentPage {
     @FindBy(css = "tr[class='ng-scope']")
     public List<WebElement> accounts;
 
+    @FindBy(id = "fromAccountId")
+    public WebElement fromAccount;
+
+    @FindBy(id = "toAccountId")
+    public WebElement toAccount;
+
+    @FindBy(id = "amount")
+    public WebElement amount;
+
+    @FindBy(css = "[type='submit']")
+    public WebElement transferButton;
+
+    @FindBy(css = "[ng-if='showResult']>p")
+    public WebElement result;
 
 }
