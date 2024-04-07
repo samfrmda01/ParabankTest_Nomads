@@ -6,3 +6,5 @@ out/
 .idea
 workspace.xml
 *.iml
+*.class
+*.properties
