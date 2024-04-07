@@ -40,10 +40,10 @@ public class contact_steps extends ParentPage {
         cp.mySendKeys(cp.phoneNumber, "123456");
 
     }
-    @Then("Click the {string} button to save user updates")
-    public void clickTheButtonToSaveUserUpdates(String arg0) {
-        cp.myClick(cp.updateProfile);
 
+    @Then("Click the update profile button to save user updates")
+    public void clickTheUpdateProfileButtonToSaveUserUpdates() {
+        cp.myClick(cp.updateProfile);
     }
     @And("User should receive an appropriate error message")
     public void userShouldReceiveAnAppropriateErrorMessage() {
@@ -77,6 +77,5 @@ public class contact_steps extends ParentPage {
         cp.myClick(cp.loginButton);
     }
 
+    }
 
-
-}
