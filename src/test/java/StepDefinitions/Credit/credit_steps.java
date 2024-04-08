@@ -92,23 +92,25 @@ public class credit_steps extends ParentPage {
         num++;
         WaitNano(10);
         List<String> helperTexts = new ArrayList<>(Arrays.asList("Error!", "Status: Denied", "Status: Approved"));
-        if (num == 1) {
-            verifyContainsText(cP.helperText, helperTexts.get(0));
-        } else if (num == 2) {
-            verifyContainsText(cP.helperText, helperTexts.get(1));
-        } else if (num == 3) {
-            verifyContainsText(cP.helperText, helperTexts.get(0));
-        } else if (num == 4) {
-            verifyContainsText(cP.helperText, helperTexts.get(1));
-
+        if (num == 1 || num == 3) {
+            verifyContainsText(cP.error, "An internal error has occurred and has been logged.");
+        } else if (num == 2 || num == 4) {
+            verifyContainsText(cP.approvedOdenied, "Denied");
         } else if (num == 5) {
             WaitNano(5);
             Assert.assertTrue(cP.helperText2.isEnabled(), "buggy");
         } else if (num == 6) {
-            verifyContainsText(cP.helperText, helperTexts.get(2));
+            for (WebElement x : cP.accounts) {
+                if (x.getText().contains(cP.newAccountId.getText())) {
+                    String[] amount = x.getText().split(" ");
+                    String dollaSign = amount[1].replaceAll("[^\\d.]", "");
+                    double amountD = Double.parseDouble(dollaSign);
+                    Assert.assertEquals(amountD, 1000.0, "buggyz");
+                }
+            }
 
-            String accountNumber = cP.helperText.getText().substring(cP.helperText.getText().length() - 5);
-            verifyContainsText(cP.newAccountId, accountNumber);
+            verifyContainsText(cP.approvedOdenied, "Approved");
+            verifyContainsText(cP.success, "Congratulations, your loan has been approved.");
             myClick(cP.newAccountId);
             verifyContainsText(cP.accountType, "LOAN");
             verifyContainsText(cP.helperText2, "No transactions found.");
@@ -117,14 +119,14 @@ public class credit_steps extends ParentPage {
 
             WaitNano(4);
 
-            for (WebElement x : cP.accounts) {
-                if (x.getText().contains(accountNumber)) {
-                    String[] amount = x.getText().split(" ");
-                    String dollaSign = amount[1].replaceAll("[^\\d.]", "");
-                    double amountD = Double.parseDouble(dollaSign);
-                    Assert.assertEquals(amountD, 1000.0, "buggyz");
-                }
-            }
+//            for (WebElement x : cP.accounts) {
+//                if (x.getText().contains(cP.newAccountId.getText())) {
+//                    String[] amount = x.getText().split(" ");
+//                    String dollaSign = amount[1].replaceAll("[^\\d.]", "");
+//                    double amountD = Double.parseDouble(dollaSign);
+//                    Assert.assertEquals(amountD, 1000.0, "buggyz");
+//                }
+//            }
         }
 
     }

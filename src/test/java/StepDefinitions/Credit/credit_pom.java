@@ -29,7 +29,7 @@ public class credit_pom {
     @FindBy(css = "input[type='submit']")
     WebElement applyLoan;
     @FindBy(css = "div[ng-if^='show']")
-    WebElement helperText;
+    WebElement helperText; //gidici
     @FindBy(css = "div[id='leftPanel'] li:nth-child(2)")
     WebElement accountOverview;
     @FindBy(css = "tbody tr[ng-repeat]")
@@ -40,6 +40,13 @@ public class credit_pom {
     WebElement accountType;
     @FindBy(css = "p[ng-if]")
     WebElement helperText2;
+
+    @FindBy(css = "td[ng-if]")
+    WebElement approvedOdenied;
+    @FindBy(css = "p[class='error']")
+    WebElement error;
+    @FindBy(css = "div[ng-if] p")
+    WebElement success;
 
 
     public WebElement getWebElement(String element) {
