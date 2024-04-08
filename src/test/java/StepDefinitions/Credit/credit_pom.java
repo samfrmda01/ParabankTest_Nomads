@@ -37,6 +37,7 @@ public class credit_pom extends ParentPage {
     @FindBy(css = "tbody tr[ng-repeat]")
     List<WebElement> accounts;
 
+
     public WebElement getWebElement(String element) {
         switch (element) {
             case "username":
