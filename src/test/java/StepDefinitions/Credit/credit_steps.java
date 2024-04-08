@@ -36,6 +36,7 @@ public class credit_steps {
         }
     }
 
+
     @Then("Click on login button")
     public void clickOnLoginButton(DataTable table) {
         List<String> buttons = table.asList(String.class);

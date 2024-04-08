@@ -100,14 +100,14 @@ public class transfer_steps extends ParentPage {
 
     @Then("the user verifies the transaction via Account Details")
     public void userVerifiesTheTransactionViaAccountDetails() {
-        wait.until(ExpectedConditions.visibilityOfAllElements(tp.accountDetails));
-        verifyContainsText(tp.accountDetails.get(tp.accountDetails.size() - 1), date.format(format));
-        verifyContainsText(tp.accountDetails.get(tp.accountDetails.size() - 1), transferAmountStr);
+        wait.until(ExpectedConditions.visibilityOfAllElements(tp.accounts));
+        verifyContainsText(tp.accounts.get(tp.accounts.size() - 1), date.format(format));
+        verifyContainsText(tp.accounts.get(tp.accounts.size() - 1), transferAmountStr);
     }
 
     @When("the user clicks on the transaction's name")
     public void userClicksOnTheTransactionSName() {
-        myClick(tp.accountDetails.get(tp.accountDetails.size() - 1).findElement(By.cssSelector("a")));
+        myClick(tp.accounts.get(tp.accounts.size() - 1).findElement(By.cssSelector("a")));
     }
 
     @And("the user records the transaction ID")
@@ -133,8 +133,8 @@ public class transfer_steps extends ParentPage {
 
     @Then("the user verifies the transaction via Transaction Details")
     public void userVerifiesTheTransactionViaTransactionDetails() {
-        wait.until(ExpectedConditions.visibilityOfAllElements(tp.accountDetails));
-        verifyContainsText(tp.accountDetails.get(0), date.format(format2));
-        verifyContainsText(tp.accountDetails.get(0), String.valueOf(transferAmount));
+        wait.until(ExpectedConditions.visibilityOfAllElements(tp.accounts));
+        verifyContainsText(tp.accounts.get(0), date.format(format2));
+        verifyContainsText(tp.accounts.get(0), String.valueOf(transferAmount));
     }
 }

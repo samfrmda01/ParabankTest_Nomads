@@ -51,9 +51,6 @@ public class transfer_pom extends ParentPage {
     @FindBy(css = "[ng-if='showResult']>p")
     public WebElement result;
 
-    @FindBy(css = "tr[class='ng-scope']")
-    public List<WebElement> accountDetails;
-
     @FindBy(css = "[align='right']+td")
     public WebElement ID;
 
