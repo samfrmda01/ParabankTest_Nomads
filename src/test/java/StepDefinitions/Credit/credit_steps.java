@@ -119,14 +119,6 @@ public class credit_steps extends ParentPage {
 
             WaitNano(4);
 
-//            for (WebElement x : cP.accounts) {
-//                if (x.getText().contains(cP.newAccountId.getText())) {
-//                    String[] amount = x.getText().split(" ");
-//                    String dollaSign = amount[1].replaceAll("[^\\d.]", "");
-//                    double amountD = Double.parseDouble(dollaSign);
-//                    Assert.assertEquals(amountD, 1000.0, "buggyz");
-//                }
-//            }
         }
 
     }
