@@ -1,19 +1,24 @@
 @Payment @Regression
 Feature: Inter-Account Money Transfer
-#  Background:
-  Scenario: temporary
-    Given navigate to ParaBank
-    And user has logged in username as "testnomads" password as "Nomad07+"
-    And user has at least two accounts
-    When user transfer money
-#    Then success message should be displayed
-#    And the message should include transaction details
-#
-#
-#  Scenario: Money Transfer Case 1
-#    And user verifies the transaction via "Account Details"
-    # buyer id, date, amount of money
-#
-#  Scenario: Money Transfer Case 2
-#    And user verifies the transaction via "Find Transactions"
-    # transaction ID,
+
+  Background:
+    Given the user navigates to ParaBank
+    And the user logs in username as "nnn" password as "nn"
+    And the user has at least two accounts
+
+
+  Scenario: Successful Money Transfer
+    When the user initiates a money transfer between accounts
+    Then a success message should be displayed
+
+
+  Scenario: Verify Transfer
+    When the user clicks on the Account Overview
+    And the user clicks on the senders ID
+    Then the user verifies the transaction via Account Details
+    When the user clicks on the transaction's name
+    And the user records the transaction ID
+    And the user clicks on the Find Transactions
+    And the user enters the transaction ID into the relevant box
+    And the user clicks on the Find Transactions button
+    Then the user verifies the transaction via Transaction Details

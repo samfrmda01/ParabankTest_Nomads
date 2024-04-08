@@ -1,11 +1,10 @@
 Feature: Take Loan
 
-  @Loan @Accounts @Regression
   Scenario Outline: Application of Loan
     Given Navigate to the website
     When User logs in with valid credentials
-      | username | aw |
-      | password | aw |
+      | username | E |
+      | password | E |
     Then Click on login button
       | loginButton |
     And Click on request loan button
@@ -19,9 +18,10 @@ Feature: Take Loan
       | applyLoan |
     Then Check helper texts
     Examples:
-      | loan  | downPaymentt |
-      | 0     | 0            |
-      | 10000 | 5            |
-      | 0     | 50           |
-      | 10    | 50           |
-      | 1000  | 500          |
+      | loan    | downPaymentt |
+      | 0       | 0            |
+      | 10000   | 5            |
+      | 0       | 50           |
+      | 10      | 50           |
+      | 1000000 | 999999       |
+      | 1000    | 500          |

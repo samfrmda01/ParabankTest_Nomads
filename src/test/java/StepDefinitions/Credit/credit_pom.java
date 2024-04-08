@@ -1,15 +1,13 @@
 package StepDefinitions.Credit;
 
-import Pages.ParentPage;
 import Utilities.GWD;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-public class credit_pom extends ParentPage {
+public class credit_pom {
     public credit_pom() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
@@ -36,6 +34,13 @@ public class credit_pom extends ParentPage {
     WebElement accountOverview;
     @FindBy(css = "tbody tr[ng-repeat]")
     List<WebElement> accounts;
+    @FindBy(css = "[id='newAccountId']")
+    WebElement newAccountId;
+    @FindBy(css = "[id='accountType']")
+    WebElement accountType;
+    @FindBy(css = "p[ng-if]")
+    WebElement helperText2;
+
 
     public WebElement getWebElement(String element) {
         switch (element) {
@@ -58,6 +63,4 @@ public class credit_pom extends ParentPage {
         }
         return null;
     }
-
-
 }
