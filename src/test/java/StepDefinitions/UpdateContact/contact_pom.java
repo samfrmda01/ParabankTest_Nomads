@@ -56,41 +56,27 @@ public class contact_pom extends ParentPage {
     @FindBy(css = "[href='/parabank/logout.htm']")
     public WebElement logOut;
 
+    @FindBy(css = "[id='customer.firstName.errors']")
+    public WebElement firstNameError;
+
+    @FindBy(css = "[id='customer.lastName.errors']")
+    public WebElement lastNameError;
+
+    @FindBy(css = "[id='customer.address.street.errors']")
+    public WebElement addressError;
+
+    @FindBy(css = "[class='smallText']")
+    public WebElement smallTextMessage;
+
     public WebElement getWebElement(String element) {
         switch (element) {
-            case "username":
-                return this.username;
-            case "password":
-                return this.password;
-            case "loginButton":
-                return this.loginButton;
-            case "updateContact":
-                return this.updateContact;
-            case "firstName":
-                return this.firstName;
-            case "lastName":
-                return this.lastName;
-            case "address":
-                return this.address;
-            case "city":
-                return this.city;
-            case "state":
-                return this.state;
-            case "zipCode":
-                return this.zipCode;
-            case "phoneNumber":
-                return this.phoneNumber;
-            case "updateProfile":
-                return this.updateProfile;
             case "helperText":
                 return this.helperText;
-            case "requiredMessage":
-                return this.requiredMessage;
-            case "logOut":
-                return this.logOut;
+            case "smallTextMessage":
+                return this.smallTextMessage;
+
         }
         return null;
     }
-
 
 }
