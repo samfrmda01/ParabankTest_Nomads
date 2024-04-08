@@ -11,9 +11,9 @@ import org.testng.annotations.*;
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 public class ParallelTransferRunnerTest extends AbstractTestNGCucumberTests {
-    @BeforeClass
-    @Parameters("browserType")
-    public void beforeClass(String browserName) {
-        GWD.threadBrowserName.set(browserName);
-    }
+//    @BeforeClass // for parallel test
+//    @Parameters("browserType")
+//    public void beforeClass(String browserName) {
+//        GWD.threadBrowserName.set(browserName);
+//    }
 }
