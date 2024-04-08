@@ -1,5 +1,6 @@
 package StepDefinitions.Credit;
 
+import Pages.ParentPage;
 import Utilities.GWD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -16,9 +17,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static Pages.ParentPage.WaitNano;
 
-public class credit_steps {
+public class credit_steps extends ParentPage {
     static int num = 0;
     credit_pom cP = new credit_pom();
 
@@ -32,7 +32,7 @@ public class credit_steps {
         List<List<String>> buttons = table.asLists(String.class);
         for (int i = 0; i < buttons.size(); i++) {
             WebElement a = cP.getWebElement(buttons.get(i).get(0));
-            cP.mySendKeys(a, buttons.get(i).get(1));
+            mySendKeys(a, buttons.get(i).get(1));
         }
     }
 
@@ -42,9 +42,9 @@ public class credit_steps {
         List<String> buttons = table.asList(String.class);
         for (int i = 0; i < buttons.size(); i++) {
             WebElement a = cP.getWebElement(buttons.get(i));
-            cP.myClick(a);
+            myClick(a);
         }
-        cP.scrollToElement(GWD.getDriver().findElement(By.cssSelector("h1[class='title']")));
+        scrollToElement(GWD.getDriver().findElement(By.cssSelector("h1[class='title']")));
         Assert.assertEquals(GWD.getDriver().getCurrentUrl(), "https://parabank.parasoft.com/parabank/overview.htm", "buggy");
     }
 
@@ -53,7 +53,7 @@ public class credit_steps {
         List<String> buttons = table.asList(String.class);
         for (int i = 0; i < buttons.size(); i++) {
             WebElement a = cP.getWebElement(buttons.get(i));
-            cP.myClick(a);
+            myClick(a);
         }
     }
 
@@ -62,7 +62,7 @@ public class credit_steps {
         List<List<String>> buttons = table.asLists(String.class);
         for (int i = 0; i < buttons.size(); i++) {
             WebElement a = cP.getWebElement(buttons.get(i).get(0));
-            cP.mySendKeys(a, buttons.get(i).get(1));
+            mySendKeys(a, buttons.get(i).get(1));
         }
     }
 
@@ -83,7 +83,7 @@ public class credit_steps {
         List<String> buttons = table.asList(String.class);
         for (int i = 0; i < buttons.size(); i++) {
             WebElement a = cP.getWebElement(buttons.get(i));
-            cP.myClick(a);
+            myClick(a);
         }
     }
 
@@ -93,20 +93,32 @@ public class credit_steps {
         WaitNano(10);
         List<String> helperTexts = new ArrayList<>(Arrays.asList("Error!", "Status: Denied", "Status: Approved"));
         if (num == 1) {
-            cP.verifyContainsText(cP.helperText, helperTexts.get(0));
+            verifyContainsText(cP.helperText, helperTexts.get(0));
         } else if (num == 2) {
-            cP.verifyContainsText(cP.helperText, helperTexts.get(1));
+            verifyContainsText(cP.helperText, helperTexts.get(1));
         } else if (num == 3) {
-            cP.verifyContainsText(cP.helperText, helperTexts.get(0));
+            verifyContainsText(cP.helperText, helperTexts.get(0));
         } else if (num == 4) {
-            cP.verifyContainsText(cP.helperText, helperTexts.get(1));
+            verifyContainsText(cP.helperText, helperTexts.get(1));
+
         } else if (num == 5) {
-            cP.verifyContainsText(cP.helperText, helperTexts.get(2));
-            String account = cP.helperText.getText().substring(cP.helperText.getText().length() - 5);
-            cP.myClick(cP.accountOverview);
+            WaitNano(5);
+            Assert.assertTrue(cP.helperText2.isEnabled(), "buggy");
+        } else if (num == 6) {
+            verifyContainsText(cP.helperText, helperTexts.get(2));
+
+            String accountNumber = cP.helperText.getText().substring(cP.helperText.getText().length() - 5);
+            verifyContainsText(cP.newAccountId, accountNumber);
+            myClick(cP.newAccountId);
+            verifyContainsText(cP.accountType, "LOAN");
+            verifyContainsText(cP.helperText2, "No transactions found.");
+
+            myClick(cP.accountOverview);
+
             WaitNano(4);
+
             for (WebElement x : cP.accounts) {
-                if (x.getText().contains(account)) {
+                if (x.getText().contains(accountNumber)) {
                     String[] amount = x.getText().split(" ");
                     String dollaSign = amount[1].replaceAll("[^\\d.]", "");
                     double amountD = Double.parseDouble(dollaSign);
@@ -114,7 +126,6 @@ public class credit_steps {
                 }
             }
         }
-
 
     }
 }
