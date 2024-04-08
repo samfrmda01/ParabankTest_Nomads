@@ -2,7 +2,7 @@ Feature: Update contact information
 
   Background:
     Given Navigate to the parabank
-    When Enter username and password and click login button
+    When Enter username and password and click login buttonn
     Then Navigate to the update contact info
     And Click the update profile button to save user updates
 

@@ -21,8 +21,8 @@ public class contact_steps extends ParentPage {
     public void navigateToTheParabank() {
         GWD.getDriver().get("https://parabank.parasoft.com/");
     }
-    @When("Enter username and password and click login button")
-    public void enterUsernameAndPasswordAndClickLoginButton() {
+    @When("Enter username and password and click login buttonn")
+    public void enterUsernameAndPasswordAndClickLoginButtonn() {
         cp.mySendKeys(cp.username, "umit");
         cp.mySendKeys(cp.password, "a");
         cp.myClick(cp.loginButton);
