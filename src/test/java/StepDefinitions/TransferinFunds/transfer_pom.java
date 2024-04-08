@@ -11,6 +11,7 @@ public class transfer_pom extends ParentPage {
     public transfer_pom() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
+
     // login
     @FindBy(name = "username")
     public WebElement username;
@@ -27,6 +28,9 @@ public class transfer_pom extends ParentPage {
 
     @FindBy(linkText = "Transfer Funds")
     public WebElement transferFunds;
+
+    @FindBy(linkText = "Find Transactions")
+    public WebElement findTransactions;
 
     // dialog content
     @FindBy(css = "tr[class='ng-scope']")
@@ -47,4 +51,15 @@ public class transfer_pom extends ParentPage {
     @FindBy(css = "[ng-if='showResult']>p")
     public WebElement result;
 
+    @FindBy(css = "tr[class='ng-scope']")
+    public List<WebElement> accountDetails;
+
+    @FindBy(css = "[align='right']+td")
+    public WebElement ID;
+
+    @FindBy(id = "criteria.transactionId")
+    public WebElement IDtextbox;
+
+    @FindBy(css = "[ng-click=\"criteria.searchType = 'ID'\"]")
+    public WebElement findTransactionsButton;
 }
