@@ -35,9 +35,6 @@ public class ParentPage {
 
     public void verifyContainsText(WebElement element, String value) {
         wait.until(ExpectedConditions.textToBePresentInElement(element, value));
-
-      
-
         Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()),"The message does not contain the expected value!");
     }
 
