@@ -1,3 +1,4 @@
+@Payment @SmokeTest @Regression
 Feature: : Bill Payment Functionality
 
   Scenario Outline: Different Types of Bill Payment Transactions
@@ -9,7 +10,6 @@ Feature: : Bill Payment Functionality
       | billPay |
 
     When Determine the invoice type as "<payeeName>"
-
     And Send keys to item in RightPanel
       | payeeAddress     |
       | payeeCity        |
