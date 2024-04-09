@@ -11,7 +11,7 @@ import org.testng.annotations.Parameters;
         glue = {"StepDefinitions"},
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
-public class ParallelTest extends AbstractTestNGCucumberTests {
+public class AllParallelTest extends AbstractTestNGCucumberTests {
     @BeforeClass
     @Parameters("browserType")
     public void beforeClass(String browserName) {

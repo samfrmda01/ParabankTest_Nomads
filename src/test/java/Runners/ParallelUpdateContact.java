@@ -7,15 +7,14 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
 @CucumberOptions(
-        features = {"src/test/java/FeatureFiles/payingBills.feature"},
+        features = {"src/test/java/FeatureFiles/contact.feature"},
         glue = {"StepDefinitions"},
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
-public class ParallelPayingBillsRunnerTest extends AbstractTestNGCucumberTests {
+public class ParallelUpdateContact extends AbstractTestNGCucumberTests { @BeforeClass
+@Parameters("browserType")
+public void beforeClass(String browserName) {
 
-    @BeforeClass
-    @Parameters("browserType")
-    public void beforeClass(String browserName) {
-        GWD.threadBrowserName.set(browserName);
-    }
+    GWD.threadBrowserName.set(browserName);
+}
 }

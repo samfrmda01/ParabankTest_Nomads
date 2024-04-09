@@ -28,10 +28,10 @@ public class payingBills_steps {
         GWD.getDriver().get("https://parabank.parasoft.com/");
     }
 
-    @When("Enter username and password and click login button")
-    public void enterUsernameAndPasswordAndClickLoginButton() {
-        pb.mySendKeys(pb.username, "Testdeneme1");
-        pb.mySendKeys(pb.password, "12345");
+    @When("Enter username and password and click login buttton")
+    public void enterUsernameAndPasswordAndClickLoginButtton() {
+        pb.mySendKeys(pb.username, "ew");
+        pb.mySendKeys(pb.password, "ew");
         pb.myClick(pb.login);
     }
 

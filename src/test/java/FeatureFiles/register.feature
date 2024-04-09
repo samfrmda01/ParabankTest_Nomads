@@ -1,3 +1,4 @@
+@Accounts @SmokeTest @Regression
 Feature: Register New Account
 
   Scenario: Register

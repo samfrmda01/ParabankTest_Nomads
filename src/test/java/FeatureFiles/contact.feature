@@ -1,3 +1,4 @@
+@Contact @Accounts
 Feature: Update contact information
 
   Background:
@@ -13,7 +14,7 @@ Feature: Update contact information
     And User switches the session
     When Enter username and password and click login button
     Then User should display an appropriate message
-      | smallTextMessage |umit |
+      | smallTextMessage | umit |
 
   Scenario: Negative update contact information
     When Leave three fields blank

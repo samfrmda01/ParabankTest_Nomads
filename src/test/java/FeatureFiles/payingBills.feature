@@ -3,7 +3,7 @@ Feature: : Bill Payment Functionality
 
   Scenario Outline: Different Types of Bill Payment Transactions
     Given Navigate to ParaBank
-    When Enter username and password and click login button
+    When Enter username and password and click login buttton
     Then You should be able to log in successfully.
     And Account table should be displayed
     And Click on the element in LeftPanel

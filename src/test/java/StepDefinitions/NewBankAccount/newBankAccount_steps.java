@@ -18,8 +18,8 @@ import java.util.List;
 
 public class newBankAccount_steps extends ParentPage {
     newBankAccount_pom ns = new newBankAccount_pom();
-    @Given("Navigate to ParaBank")
-    public void navigateToParaBank() {
+    @Given("Navigate to ParaBankk")
+    public void navigateToParaBankk() {
 
         System.out.println("System open");
         GWD.getDriver().get("https://parabank.parasoft.com/parabank/index.htm");
@@ -27,8 +27,8 @@ public class newBankAccount_steps extends ParentPage {
 
     @When("Enterr username and password and click login button")
     public void enterrUsernameAndPasswordAndClickLoginButton() {
-        ns.mySendKeys(ns.username, "fatos");
-        ns.mySendKeys(ns.password, "demo123");
+        ns.mySendKeys(ns.username, "ew");
+        ns.mySendKeys(ns.password, "ew");
         ns.myClick(ns.LoginButton);
     }
 

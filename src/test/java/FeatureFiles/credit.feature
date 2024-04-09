@@ -1,10 +1,11 @@
+@Loan @Accounts @Regression
 Feature: Take Loan
 
   Scenario Outline: Application of Loan
     Given Navigate to the website
     When User logs in with valid credentials
-      | username | E |
-      | password | E |
+      | username | ew |
+      | password | ew |
     Then Click on login button
       | loginButton |
     And Click on request loan button

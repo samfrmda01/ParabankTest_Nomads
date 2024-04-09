@@ -13,6 +13,8 @@ import java.time.Duration;
 import java.util.List;
 
 public class ParentPage {
+    public String ax = String.valueOf(RandomGenerator(19, 1));
+    public String bx = String.valueOf(RandomGenerator(19, 1));
     public WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(7));
 
     public void myClick(WebElement element) {
@@ -35,7 +37,7 @@ public class ParentPage {
 
     public void verifyContainsText(WebElement element, String value) {
         wait.until(ExpectedConditions.textToBePresentInElement(element, value));
-        Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()),"The message does not contain the expected value!");
+        Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()), "The message does not contain the expected value!");
     }
 
     public static void WaitNano(long sec) {

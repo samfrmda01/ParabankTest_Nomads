@@ -1,6 +1,7 @@
 package StepDefinitions.Credit;
 
 import Pages.ParentPage;
+import StepDefinitions.Register.register_steps;
 import Utilities.GWD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -89,6 +90,7 @@ public class credit_steps extends ParentPage {
 
     @Then("Check helper texts")
     public void checkHelperTexts() {
+
         num++;
         WaitNano(10);
         List<String> helperTexts = new ArrayList<>(Arrays.asList("Error!", "Status: Denied", "Status: Approved"));

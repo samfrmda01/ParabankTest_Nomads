@@ -4,21 +4,21 @@
     <test name="Chrome Test">
         <parameter name="browserType" value="chrome"/>
         <classes>
-            <class name="Runners.AllParallelTest"/>
+            <class name="Runners.ParallelNewBank"/>
         </classes>
     </test>
 
     <test name="Edge Test">
         <parameter name="browserType" value="edge"/>
         <classes>
-            <class name="Runners.AllParallelTest"/>
+            <class name="Runners.ParallelNewBank"/>
         </classes>
     </test>
 
     <test name="Firefox Test">
         <parameter name="browserType" value="firefox"/>
         <classes>
-            <class name="Runners.AllParallelTest"/>
+            <class name="Runners.ParallelNewBank"/>
         </classes>
     </test>
 </suite>

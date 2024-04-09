@@ -1,5 +1,5 @@
+@Accounts @SmokeTest @Regression
 Feature: Login
-
   Scenario: Login positive
     Given Navigate to website
     When Enter username and password and click login button

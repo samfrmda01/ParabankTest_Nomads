@@ -23,8 +23,8 @@ public class contact_steps extends ParentPage {
     }
     @When("Enter username and password and click login buttonn")
     public void enterUsernameAndPasswordAndClickLoginButtonn() {
-        cp.mySendKeys(cp.username, "umit");
-        cp.mySendKeys(cp.password, "a");
+        cp.mySendKeys(cp.username, "ew");
+        cp.mySendKeys(cp.password, "ew");
         cp.myClick(cp.loginButton);
     }
     @And("Navigate to the update contact info")
