@@ -3,7 +3,7 @@ Feature: Inter-Account Money Transfer
 
   Background:
     Given the user navigates to ParaBank
-    And the user logs in username as "test" password as "tt"
+    And the user logs in username as "testt" password as "tt"
     And the user has at least two accounts
 
 
