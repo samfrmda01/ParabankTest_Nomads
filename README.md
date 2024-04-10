@@ -1,8 +1,9 @@
-# Para Bank Test Automation Project
+# Para Bank Testing Automation Project
 
-## Overview
+Welcome to the ParaBank Automation Testing Project! 🚀
 
-ParaBank is a website where users take advantage of features such as take loan ,transfer,transaction history,pay bills.This projects scope is automate testing for ParaBank and this project is open source and developed by a community.
+ParaBank is a versatile website offering users a range of financial services, including loan management, fund transfers, transaction history tracking, and bill payments. This project focuses on automating the testing processes for ParaBank to ensure its functionality remains robust and user-friendly.
+
 
 ## User Stories
 | User Story                                     | Contributor                  |
