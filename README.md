@@ -30,7 +30,6 @@ ParaBank is a versatile website offering users a range of financial services, in
 
 ## Prerequisites
 To run the tests in this project, you will need:
-
 - Java Development Kit (JDK) version 11 or above.
 - An Integrated Development Environment (IDE) like IntelliJ IDEA or Eclipse.
 - Selenium WebDriver for browser automation.
@@ -39,9 +38,9 @@ To run the tests in this project, you will need:
 
 
 ## Installation & Running Tests
-Ensure Java and an IDE are installed on your system.
-Clone the repository to your local machine.
-Open the project in your IDE.
-Make sure Selenium WebDriver TestNG and Cucumber libraries are added to the project's dependencies.
-Navigate to the test directory.
-Run the tests using your IDE's built-in test runner.
+- Ensure Java and an IDE are installed on your system.
+- Clone the repository to your local machine.
+- Open the project in your IDE.
+- Make sure Selenium WebDriver TestNG and Cucumber libraries are added to the project's dependencies.
+- Navigate to the test directory.
+- Run the tests using your IDE's built-in test runner.
