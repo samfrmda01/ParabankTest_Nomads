@@ -93,15 +93,15 @@ public class credit_steps extends ParentPage {
 
         num++;
         WaitNano(10);
-        List<String> helperTexts = new ArrayList<>(Arrays.asList("Error!", "Status: Denied", "Status: Approved"));
-        if (num == 1 || num == 3) {
+//        List<String> helperTexts = new ArrayList<>(Arrays.asList("Error!", "Status: Denied", "Status: Approved"));
+        if (num == 1 || num == 3||num==7||num==9||num==13||num==15) {
             verifyContainsText(cP.error, "An internal error has occurred and has been logged.");
-        } else if (num == 2 || num == 4) {
+        } else if (num == 2 || num == 4 || num == 8 || num == 10||num==14||num==16) {
             verifyContainsText(cP.approvedOdenied, "Denied");
-        } else if (num == 5) {
+        } else if (num == 5||num==11||num==17) {
             WaitNano(5);
             Assert.assertTrue(cP.helperText2.isEnabled(), "buggy");
-        } else if (num == 6) {
+        } else if (num == 6||num==12||num==18) {
             for (WebElement x : cP.accounts) {
                 if (x.getText().contains(cP.newAccountId.getText())) {
                     String[] amount = x.getText().split(" ");
@@ -118,7 +118,6 @@ public class credit_steps extends ParentPage {
             verifyContainsText(cP.helperText2, "No transactions found.");
 
             myClick(cP.accountOverview);
-
             WaitNano(4);
 
         }

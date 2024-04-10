@@ -12,8 +12,8 @@ public class login_steps {
 
     @When("Enter username and password and click login button")
     public void Enterusernameandpasswordandclickloginbutton() {
-        lp.mySendKeys(lp.username, "ew");
-        lp.mySendKeys(lp.password, "ew");
+        lp.mySendKeys(lp.username, "1");
+        lp.mySendKeys(lp.password, "1");
         lp.myClick(lp.loginButton);
     }
 

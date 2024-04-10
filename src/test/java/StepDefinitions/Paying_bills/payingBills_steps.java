@@ -30,8 +30,8 @@ public class payingBills_steps {
 
     @When("Enter username and password and click login buttton")
     public void enterUsernameAndPasswordAndClickLoginButtton() {
-        pb.mySendKeys(pb.username, "ew");
-        pb.mySendKeys(pb.password, "ew");
+        pb.mySendKeys(pb.username, "1");
+        pb.mySendKeys(pb.password, "1");
         pb.myClick(pb.login);
     }
 

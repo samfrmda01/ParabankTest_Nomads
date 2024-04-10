@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class contact_pom extends ParentPage {
     public contact_pom(){
         PageFactory.initElements(GWD.getDriver(),this);
@@ -44,10 +46,10 @@ public class contact_pom extends ParentPage {
     @FindBy(name = "customer.phoneNumber")
     public WebElement phoneNumber;
 
-    @FindBy(xpath = "//input[@type='submit']")
+    @FindBy(css = "input[type='submit']")
     public WebElement updateProfile;
 
-    @FindBy(css = "h1[class='title']")
+    @FindBy(css = "#rightPanel > div > div > p")
     public WebElement helperText;
 
     @FindBy(xpath = "//span[@class='error ng-scope']")
@@ -65,8 +67,10 @@ public class contact_pom extends ParentPage {
     @FindBy(css = "[id='customer.address.street.errors']")
     public WebElement addressError;
 
-    @FindBy(css = "[class='smallText']")
+    @FindBy(css = "[id='mainPanel'] p b")
     public WebElement smallTextMessage;
+    @FindBy(css="table[class='form2'] tr")
+    public List<WebElement> tablee;
 
     public WebElement getWebElement(String element) {
         switch (element) {

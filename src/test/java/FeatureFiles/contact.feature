@@ -10,11 +10,11 @@ Feature: Update contact information
   Scenario: Positive update contact information
     When The user enters new information in the relevant fields
     Then User should display an appropriate message
-      | helperText | has been added |
+      | helperText | have been added |
     And User switches the session
-    When Enter username and password and click login button
+    When Enter username and password and click login buttoon
     Then User should display an appropriate message
-      | smallTextMessage | umit |
+      | smallTextMessage | eser |
 
   Scenario: Negative update contact information
     When Leave three fields blank

@@ -13,7 +13,7 @@ Feature: Login
     Then Should be available difrent message
     Examples:
       | userName | Password |
-      | hata45   | hata45   |
+      | haAASSSAta45zxcqweqwceqwxda15866100000 | $#@wsopkcsaSA1x,02c3e |
       |          | hata45   |
       | hata45   |          |
       |          |          |

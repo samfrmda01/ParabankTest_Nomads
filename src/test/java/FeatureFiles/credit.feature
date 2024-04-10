@@ -4,8 +4,8 @@ Feature: Take Loan
   Scenario Outline: Application of Loan
     Given Navigate to the website
     When User logs in with valid credentials
-      | username | ew |
-      | password | ew |
+      | username | 1 |
+      | password | 1 |
     Then Click on login button
       | loginButton |
     And Click on request loan button
